@@ -30,13 +30,15 @@
       <p id="currentDay" class="lead"></p>
     </header>
 
-    <div class="container" id="9a-hourBox">
+    <div class="container">
       <div class="row">
         <div class="col-1 border border-left-0">
           <!-- if needed, I can use $("#id").attr("style", "width: 75px") -->
-          <p class="align-middle">9 AM</p>
+          <p class="text-center align-middle">
+            <br><br>9 AM</p> 
+            <!-- I'm not proud of this, but I had to use BR to get it to align middle. Not sure why... -->
         </div>
-        <input type="text" class="col-10 border textarea">
+        <input type="text" class="col-10 border textarea hourBox" id="9am-hourBox">
         <button class="col-1 border saveBtn"><i class="fas fa-save"></i></button>
           <!-- TODO: This needs to not have that weird black border. It also needs to change black on click -->
       </div>
