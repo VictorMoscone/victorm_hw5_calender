@@ -1,6 +1,4 @@
 $(document).ready(function (){
-    let currentDay = document.querySelector("#currentDay");
-    // need to reformat for Jquery
-    
-    currentDay.textContent = `${moment().format('dddd')}, ${moment().format('MMMM Do YYYY')}`;
+    $("#currentDay").text(`${moment().format('dddd')}, ${moment().format('MMMM Do YYYY')}`);
+    // TODO: Will need to use military time when trying to sense if the even has passed or not.
 })
