@@ -1,11 +1,14 @@
 $(document).ready(function (){
+
     $("#currentDay").text(`${moment().format('dddd')}, ${moment().format('MMMM Do YYYY')}`);
+
     $("#resetStorage").on("click", function() {
         localStorage.clear();
         // Wipes the storage.
         location.reload();
         // Refreshes the page.
     })
+
     $(".hourBox").each(function () {
         // All of the text boxes for each hour will be checked on refresh.
         let theHour = $(this).attr("id")
@@ -24,6 +27,7 @@ $(document).ready(function (){
         $(`#${theHour}`).val(localStorage.getItem(`${theHour}-input`))
         // On page load, this will display any previously saved inputs.
     })
+
     $(".saveBtn").each(function () {
         let buttonHour = $(this).attr("id");
         // Find's the button's unique ID.
@@ -36,7 +40,7 @@ $(document).ready(function (){
             localStorage.setItem(`${boxHour}-input`, textEntered); 
             // saves the input value into local storage under a Key like (HR-input).
         })
-    })
-})
 
-// TODO: On page load, get the local storage saved inputs and display them.
+    })
+
+})
