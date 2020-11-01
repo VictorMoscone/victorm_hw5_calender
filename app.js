@@ -2,6 +2,9 @@ $(document).ready(function (){
     $("#currentDay").text(`${moment().format('dddd')}, ${moment().format('MMMM Do YYYY')}`);
     $("#resetStorage").on("click", function() {
         localStorage.clear();
+        // Wipes the storage.
+        location.reload();
+        // Refreshes the page.
     })
     $(".hourBox").each(function () {
         // All of the text boxes for each hour will be checked on refresh.
