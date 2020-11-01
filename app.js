@@ -15,6 +15,8 @@ $(document).ready(function (){
             $(this).addClass("future");
             // otherwise, it will be colored (green) as in the future.
         }
+        $(`#${theHour}`).val(localStorage.getItem(`${theHour}-input`))
+        // On page load, this will display any previously saved inputs.
     })
     $(".saveBtn").each(function () {
         let buttonHour = $(this).attr("id");
@@ -23,7 +25,7 @@ $(document).ready(function (){
         // Convert's the button's ID to a number type.
         $(this).on("click", function(){
             // on button click...
-            let textEntered = JSON.stringify($(`#${boxHour}`).val());
+            let textEntered = $(`#${boxHour}`).val();
             // This finds input for the box of the same number that the button was (9am box, 9am button).
             localStorage.setItem(`${boxHour}-input`, textEntered); 
             // saves the input value into local storage under a Key like (HR-input).
